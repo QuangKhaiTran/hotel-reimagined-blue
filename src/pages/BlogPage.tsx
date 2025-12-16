@@ -108,9 +108,9 @@ const BlogPage = () => {
       </section>
 
       {/* Search & Filter */}
-      <section className="py-8 bg-background border-b border-border">
+      <section className="py-6 sm:py-8 bg-background border-b border-border">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div className="flex flex-col gap-4">
             {/* Search */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -133,14 +133,15 @@ const BlogPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0"
+              className="flex items-center gap-2 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0"
             >
               {categories.map((category) => (
                 <Button
                   key={category}
                   variant={selectedCategory === category ? "default" : "outline"}
                   onClick={() => setSelectedCategory(category)}
-                  className={`rounded-full flex-shrink-0 ${
+                  size="sm"
+                  className={`rounded-full flex-shrink-0 text-xs sm:text-sm ${
                     selectedCategory === category
                       ? "bg-primary text-primary-foreground"
                       : "border-border text-foreground hover:border-primary hover:text-primary"

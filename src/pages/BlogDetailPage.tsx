@@ -250,27 +250,27 @@ const BlogDetailPage = () => {
               </h1>
 
               {/* Author */}
-              <div className="flex items-center justify-between pb-8 mb-8 border-b border-border">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-8 mb-8 border-b border-border">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm sm:text-base">
                     Y
                   </div>
                   <div>
-                    <div className="font-medium text-foreground">{post.author}</div>
-                    <div className="text-sm text-muted-foreground">Khách sạn 5 sao tại Cần Thơ</div>
+                    <div className="font-medium text-foreground text-sm sm:text-base">{post.author}</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">Khách sạn 5 sao tại Cần Thơ</div>
                   </div>
                 </div>
 
                 {/* Share */}
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-muted-foreground mr-2">Chia sẻ:</span>
-                  <Button variant="outline" size="icon" className="rounded-full w-10 h-10">
+                  <span className="text-sm text-muted-foreground mr-2 hidden sm:inline">Chia sẻ:</span>
+                  <Button variant="outline" size="icon" className="rounded-full w-9 h-9 sm:w-10 sm:h-10">
                     <Facebook className="w-4 h-4" />
                   </Button>
-                  <Button variant="outline" size="icon" className="rounded-full w-10 h-10">
+                  <Button variant="outline" size="icon" className="rounded-full w-9 h-9 sm:w-10 sm:h-10">
                     <Twitter className="w-4 h-4" />
                   </Button>
-                  <Button variant="outline" size="icon" className="rounded-full w-10 h-10">
+                  <Button variant="outline" size="icon" className="rounded-full w-9 h-9 sm:w-10 sm:h-10">
                     <Share2 className="w-4 h-4" />
                   </Button>
                 </div>

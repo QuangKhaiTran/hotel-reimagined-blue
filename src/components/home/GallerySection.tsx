@@ -39,7 +39,7 @@ const GallerySection = () => {
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
           {images.map((image, index) => (
             <motion.div
               key={index}
@@ -47,8 +47,8 @@ const GallerySection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative group cursor-pointer overflow-hidden rounded-2xl ${
-                index === 0 ? "md:col-span-2 md:row-span-2" : ""
+              className={`relative group cursor-pointer overflow-hidden rounded-xl sm:rounded-2xl ${
+                index === 0 ? "col-span-2 row-span-2" : ""
               }`}
               onClick={() => setSelectedImage(image.src)}
             >
@@ -56,16 +56,16 @@ const GallerySection = () => {
                 src={image.src}
                 alt={image.alt}
                 className={`w-full object-cover transition-transform duration-700 group-hover:scale-110 ${
-                  index === 0 ? "h-full min-h-[300px] md:min-h-[500px]" : "h-48 md:h-56"
+                  index === 0 ? "h-full min-h-[200px] sm:min-h-[300px] md:min-h-[500px]" : "h-32 sm:h-40 md:h-56"
                 }`}
               />
               <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-all duration-300 flex items-center justify-center">
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ZoomIn className="w-10 h-10 text-primary-foreground" />
+                  <ZoomIn className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" />
                 </div>
               </div>
-              <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm">
+              <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="bg-primary text-primary-foreground px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm">
                   {image.category}
                 </span>
               </div>
