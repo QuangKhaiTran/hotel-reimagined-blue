@@ -201,11 +201,11 @@ const BookingLookupPage = () => {
                 transition={{ duration: 0.6 }}
                 className="mt-8 bg-card p-8 md:p-10 rounded-3xl shadow-md"
               >
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="font-heading text-2xl font-bold text-foreground">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                  <h2 className="font-heading text-xl sm:text-2xl font-bold text-foreground">
                     Thông Tin Đặt Phòng
                   </h2>
-                  <div className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium ${statusConfig[result.status].className}`}>
+                  <div className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium w-fit ${statusConfig[result.status].className}`}>
                     {(() => {
                       const Icon = statusConfig[result.status].icon;
                       return <Icon className="w-4 h-4" />;
@@ -214,43 +214,43 @@ const BookingLookupPage = () => {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
+                <div className="grid gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <Search className="w-5 h-5 text-primary" />
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <div className="text-sm text-muted-foreground">Mã đặt phòng</div>
                         <div className="font-semibold text-foreground">{result.id}</div>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <User className="w-5 h-5 text-primary" />
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <div className="text-sm text-muted-foreground">Khách hàng</div>
-                        <div className="font-semibold text-foreground">{result.guestName}</div>
+                        <div className="font-semibold text-foreground truncate">{result.guestName}</div>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <Mail className="w-5 h-5 text-primary" />
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <div className="text-sm text-muted-foreground">Email</div>
-                        <div className="font-semibold text-foreground">{result.email}</div>
+                        <div className="font-semibold text-foreground truncate text-sm">{result.email}</div>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <Phone className="w-5 h-5 text-primary" />
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <div className="text-sm text-muted-foreground">Điện thoại</div>
                         <div className="font-semibold text-foreground">{result.phone}</div>
                       </div>
@@ -263,18 +263,18 @@ const BookingLookupPage = () => {
                       <div className="font-semibold text-foreground">{result.roomType}</div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="p-4 bg-secondary/50 rounded-xl">
-                        <div className="text-sm text-muted-foreground mb-1">Nhận phòng</div>
-                        <div className="font-semibold text-foreground flex items-center gap-2">
-                          <Calendar className="w-4 h-4 text-primary" />
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                      <div className="p-3 sm:p-4 bg-secondary/50 rounded-xl">
+                        <div className="text-xs sm:text-sm text-muted-foreground mb-1">Nhận phòng</div>
+                        <div className="font-semibold text-foreground flex items-center gap-1 sm:gap-2 text-sm sm:text-base">
+                          <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
                           {result.checkIn}
                         </div>
                       </div>
-                      <div className="p-4 bg-secondary/50 rounded-xl">
-                        <div className="text-sm text-muted-foreground mb-1">Trả phòng</div>
-                        <div className="font-semibold text-foreground flex items-center gap-2">
-                          <Calendar className="w-4 h-4 text-primary" />
+                      <div className="p-3 sm:p-4 bg-secondary/50 rounded-xl">
+                        <div className="text-xs sm:text-sm text-muted-foreground mb-1">Trả phòng</div>
+                        <div className="font-semibold text-foreground flex items-center gap-1 sm:gap-2 text-sm sm:text-base">
+                          <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
                           {result.checkOut}
                         </div>
                       </div>
@@ -282,7 +282,7 @@ const BookingLookupPage = () => {
 
                     <div className="p-4 bg-primary/10 rounded-xl">
                       <div className="text-sm text-muted-foreground mb-1">Tổng tiền</div>
-                      <div className="text-2xl font-bold text-primary">{result.totalAmount}</div>
+                      <div className="text-xl sm:text-2xl font-bold text-primary">{result.totalAmount}</div>
                     </div>
                   </div>
                 </div>

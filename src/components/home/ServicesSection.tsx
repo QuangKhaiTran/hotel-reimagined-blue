@@ -58,7 +58,7 @@ const ServicesSection = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.name}
@@ -67,15 +67,15 @@ const ServicesSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -8 }}
-              className="group p-8 bg-card rounded-3xl shadow-sm hover:shadow-md border border-border/50 hover:border-primary/30 transition-all duration-300"
+              className="group p-5 sm:p-6 lg:p-8 bg-card rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-md border border-border/50 hover:border-primary/30 transition-all duration-300"
             >
-              <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl sm:rounded-2xl bg-secondary flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                <service.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+              <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground mb-2 sm:mb-3 group-hover:text-primary transition-colors">
                 {service.name}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                 {service.description}
               </p>
             </motion.div>

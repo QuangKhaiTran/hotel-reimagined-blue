@@ -70,7 +70,7 @@ const AboutSection = () => {
               <img
                 src={lobbyImage}
                 alt="Sảnh Y Hotel"
-                className="w-full h-[500px] object-cover"
+                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
               />
               {/* Rating Badge */}
               <motion.div
@@ -78,18 +78,18 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="absolute bottom-6 right-6 bg-primary text-primary-foreground px-6 py-4 rounded-2xl shadow-lg"
+                className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-primary text-primary-foreground px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl shadow-lg"
               >
                 <div className="flex items-center gap-2">
-                  <Star className="w-6 h-6 fill-current" />
-                  <span className="font-heading text-2xl font-bold">5.0</span>
+                  <Star className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
+                  <span className="font-heading text-xl sm:text-2xl font-bold">5.0</span>
                 </div>
-                <div className="text-sm text-primary-foreground/80">Đánh Giá Hoàn Hảo</div>
+                <div className="text-xs sm:text-sm text-primary-foreground/80">Đánh Giá Hoàn Hảo</div>
               </motion.div>
             </div>
 
             {/* Decorative Element */}
-            <div className="absolute -z-10 -bottom-6 -right-6 w-full h-full border-2 border-primary/30 rounded-3xl" />
+            <div className="absolute -z-10 -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-full h-full border-2 border-primary/30 rounded-3xl hidden sm:block" />
           </motion.div>
         </div>
       </div>

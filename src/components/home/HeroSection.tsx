@@ -52,15 +52,15 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0"
         >
-          <Link to="/rooms">
-            <Button className="btn-hero text-base px-8 py-6">
+          <Link to="/rooms" className="w-full sm:w-auto">
+            <Button className="btn-hero text-sm sm:text-base px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto">
               Đặt Phòng Ngay
             </Button>
           </Link>
-          <Link to="/rooms">
-            <Button variant="outline" className="btn-outline-hero border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-foreground px-8 py-6">
+          <Link to="/rooms" className="w-full sm:w-auto">
+            <Button variant="outline" className="btn-outline-hero border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-foreground px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto">
               Khám Phá Phòng
             </Button>
           </Link>

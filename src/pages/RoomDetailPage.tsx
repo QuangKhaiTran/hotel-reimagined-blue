@@ -176,29 +176,29 @@ const RoomDetailPage = () => {
               </p>
 
               {/* Quick Info */}
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="p-4 bg-secondary/50 rounded-2xl text-center">
-                  <Users className="w-6 h-6 text-primary mx-auto mb-2" />
-                  <div className="text-sm text-muted-foreground">Sức chứa</div>
-                  <div className="font-semibold text-foreground">{room.capacity} khách</div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mb-8">
+                <div className="p-3 sm:p-4 bg-secondary/50 rounded-2xl text-center">
+                  <Users className="w-5 sm:w-6 h-5 sm:h-6 text-primary mx-auto mb-2" />
+                  <div className="text-xs sm:text-sm text-muted-foreground">Sức chứa</div>
+                  <div className="font-semibold text-foreground text-sm sm:text-base">{room.capacity} khách</div>
                 </div>
-                <div className="p-4 bg-secondary/50 rounded-2xl text-center">
-                  <Maximize className="w-6 h-6 text-primary mx-auto mb-2" />
-                  <div className="text-sm text-muted-foreground">Diện tích</div>
-                  <div className="font-semibold text-foreground">{room.size}</div>
+                <div className="p-3 sm:p-4 bg-secondary/50 rounded-2xl text-center">
+                  <Maximize className="w-5 sm:w-6 h-5 sm:h-6 text-primary mx-auto mb-2" />
+                  <div className="text-xs sm:text-sm text-muted-foreground">Diện tích</div>
+                  <div className="font-semibold text-foreground text-sm sm:text-base">{room.size}</div>
                 </div>
-                <div className="p-4 bg-secondary/50 rounded-2xl text-center">
-                  <Bed className="w-6 h-6 text-primary mx-auto mb-2" />
-                  <div className="text-sm text-muted-foreground">Giường</div>
-                  <div className="font-semibold text-foreground text-sm">{room.bed}</div>
+                <div className="p-3 sm:p-4 bg-secondary/50 rounded-2xl text-center col-span-2 sm:col-span-1">
+                  <Bed className="w-5 sm:w-6 h-5 sm:h-6 text-primary mx-auto mb-2" />
+                  <div className="text-xs sm:text-sm text-muted-foreground">Giường</div>
+                  <div className="font-semibold text-foreground text-xs sm:text-sm">{room.bed}</div>
                 </div>
               </div>
 
               {/* Price & CTA */}
-              <div className="bg-card p-6 rounded-2xl border border-border mb-8">
-                <div className="flex items-center justify-between mb-4">
+              <div className="bg-card p-4 sm:p-6 rounded-2xl border border-border mb-8">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
                   <div>
-                    <span className="text-3xl font-bold text-primary">{room.price}₫</span>
+                    <span className="text-2xl sm:text-3xl font-bold text-primary">{room.price}₫</span>
                     <span className="text-muted-foreground">/đêm</span>
                   </div>
                   <div className="text-sm text-muted-foreground">
